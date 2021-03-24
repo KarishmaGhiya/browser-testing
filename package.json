@@ -1,0 +1,52 @@
+{
+  "name": "browser-test-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "module": "./build/src/index.js",
+  "browser": {
+    "./build/src/index.js": "./build/src/index.browser.js",
+    "os": false,
+    "process": false
+  },
+  "scripts": {
+    "build": "tsc -p . && rollup -c rollup.test.config.js 2>&1",
+    "build:browser": "cross-env ONLY_BROWSER=true rollup -c 2>&1",
+    "test": "karma start karma.conf.js --single-run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "11.0.2",
+    "@rollup/plugin-multi-entry": "^3.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-replace": "^2.2.0",
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.2",
+    "esm": "^3.2.18",
+    "chai": "^4.3.4",
+    "cross-env": "^7.0.2",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-env-preprocessor": "^0.1.1",
+    "karma-mocha": "^2.0.1",
+    "karma-sourcemap-loader": "^0.3.8",
+    "karma-source-map-support": "1.4.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-typescript": "^5.5.0",
+    "karma-typescript-preprocessor": "^0.4.0",
+    "karma-json-to-file-reporter": "^1.0.1",
+    "karma-junit-reporter": "^2.0.1",
+    "rollup": "^1.16.3",
+    "rollup-plugin-shim": "^1.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-terser": "^5.1.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "karma": "^6.3.0",
+    "mocha": "^8.3.2",
+    "process": "^0.11.10",
+    "sourcemap": "^0.1.0",
+    "tslib": "^2.0.0"
+  }
+}
