@@ -1,6 +1,6 @@
 // Karma configuration
 // Generated on Tue Mar 23 2021 20:04:58 GMT-0700 (Pacific Daylight Time)
-
+process.env.CHROME_BIN = require("puppeteer").executablePath();
 module.exports = function(config) {
     config.set({
   
@@ -30,7 +30,7 @@ module.exports = function(config) {
   
       // list of files / patterns to exclude
       exclude: [
-        "node_modules/**"
+   
       ],
   
   
